@@ -1,3 +1,7 @@
-Initial content
-# koyo-nakano.github.io
-# koyo-nakano.github.io
+# Koyo NakanoのGitHub
+
+## 概要
+静的WebサイトをGitHub Pagesでホストする
+
+## デモリンク
+[デモを見る](https://github.com/koyo-nakano/koyo-nakano.github.io/)
