@@ -1,0 +1,39 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e0f7fa; /* 淡い青 */
+    background-image: repeating-linear-gradient(
+        45deg,
+        #ffffff 0,
+        #ffffff 10px,
+        #e0f7fa 10px,
+        #e0f7fa 20px
+    );
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* 半透明な白背景 */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+}
+.header {
+    padding: 50px 20px;
+    color: #333;
+    border-radius: 10px 10px 0 0;
+}
+.header h1 {
+    margin: 0;
+    font-size: 3rem;
+}
+.content {
+    padding: 20px;
+}
+.content p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
