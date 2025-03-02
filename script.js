@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
           "<img src='images/profile.JPG' alt='プロフィール画像' style='max-width:100%; height:auto;'>",
           "基本情報<br>生まれも育ちも熊本県熊本市。てんびん座のB型。好きな場所は自然が多い田舎。",
           "自己紹介のテキスト5",
-          "<img src='imagescuisine.JPG' alt='料理画像' style='max-width:100%; height:auto;'>",
+          "<img src='images/cuisine.JPG' alt='料理画像' style='max-width:100%; height:auto;'>",
           "経歴<br>佐賀大学理工学部知能情報システム学科卒。現在は、社内SEとして日々働いている。",
           "<img src='images/record.jpg' alt='自然画像' style='max-width:100%; height:auto;'>"
         ]
