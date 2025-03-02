@@ -1,21 +1,33 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>自分紹介</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>中野宏洋のポートフォリオ</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>中野宏洋</h1>
-        </div>
-        <div class="content">
-            <p>熊本県出身。佐賀大学理工学部知能情報システム学科卒業後、Sierを経て一企業の情報システム部として勤務。</p>
-            <p></p>
-        </div>
+  <!-- Intro 表示エリア -->
+  <div id="intro">
+    <h1 id="intro-text"></h1>
+  </div>
+
+  <!-- コンテンツ（従来の3Dキューブなど） -->
+  <div id="content" style="display: none;">
+    <div id="cube">
+      <div class="face front">自己紹介</div>
+      <div class="face back">経歴</div>
+      <div class="face left">依頼</div>
+      <div class="face right">プロダクト</div>
+      <div class="face top">？</div>
+      <div class="face bottom"></div>
     </div>
-    <script src="scripts.js"></script>
+    <h2 id="portfolio-title">中野宏洋のポートフォリオサイト</h2>
+  </div>
+
+  <!-- 落下キューブ配置用コンテナ -->
+  <div id="cube-container"></div>
+
+  <script src="script.js"></script>
 </body>
 </html>

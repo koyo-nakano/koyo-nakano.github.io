@@ -1,39 +1,128 @@
+/* 基本スタイル */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #e0f7fa; /* 淡い青 */
-    background-image: repeating-linear-gradient(
-        45deg,
-        #ffffff 0,
-        #ffffff 10px,
-        #e0f7fa 10px,
-        #e0f7fa 20px
-    );
-    color: #333;
+    font-family: 'Yu Gothic', sans-serif;
     margin: 0;
     padding: 0;
-}
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.8); /* 半透明な白背景 */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    text-align: center;
-}
-.header {
-    padding: 50px 20px;
+    background-color: #ffffff;
     color: #333;
-    border-radius: 10px 10px 0 0;
-}
-.header h1 {
-    margin: 0;
-    font-size: 3rem;
-}
-.content {
-    padding: 20px;
-}
-.content p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-}
+    overflow: hidden;
+  }
+  
+  /* Intro 表示エリア */
+  #intro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ffffff;
+    color: #6495ED;
+    font-size: 2rem;
+    text-align: center;
+  }
+  
+  /* 従来の 3D キューブ */
+  #cube {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transform-style: preserve-3d;
+    animation: rotateInfinite 6s linear infinite;
+  }
+  
+  .face {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-color: #6495ED;
+    border: 1px solid #000;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: #fff;
+    cursor: pointer;
+    transition: transform 1s ease-out;
+  }
+  
+  .front  { transform: rotateY(0deg) translateZ(100px); }
+  .back   { transform: rotateY(180deg) translateZ(100px); }
+  .left   { transform: rotateY(-90deg) translateZ(100px); }
+  .right  { transform: rotateY(90deg) translateZ(100px); }
+  .top    { transform: rotateX(90deg) translateZ(100px); }
+  .bottom { transform: rotateX(-90deg) translateZ(100px); }
+  
+  #portfolio-title {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    white-space: nowrap;
+    color: #6495ED;
+  }
+  
+  /* 落下キューブ配置用コンテナ */
+  #cube-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+  }
+  
+  /* 落下するキューブ（セル） */
+  /* サイズは JS 内で inline 指定 (width:25%、height:50vh) */
+  .falling-cube {
+    position: absolute;
+    background-color: #6495ED;
+    color: #fff;
+    font-size: 1.5rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* 以下の2行で縦書きに */
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+  }
+  
+  /* 3D キューブ回転アニメーション */
+  @keyframes rotateInfinite {
+    0% {
+      transform: translate(-50%, -50%) rotateX(-30deg) rotateY(0deg);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotateX(-30deg) rotateY(360deg);
+    }
+  }
+  
+  /* 落下アニメーション - 上段セル: 初期 top:-50vh → 最終 top:0vh */
+  @keyframes fallTop {
+    from { top: -50vh; }
+    to   { top: 0vh; }
+  }
+  
+  /* 落下アニメーション - 下段セル: 初期 top:-50vh → 最終 top:50vh */
+  @keyframes fallBottom {
+    from { top: -50vh; }
+    to   { top: 50vh; }
+  }
+  
+  /* 戻るボタンのスタイル */
+  .back-btn {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #333;
+    border: none;
+    padding: 5px 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
